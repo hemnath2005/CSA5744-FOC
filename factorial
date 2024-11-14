@@ -1,0 +1,23 @@
+factorial() {
+    num=$1
+    result=1
+
+    # Loop to calculate factorial
+    for (( i=1; i<=num; i++ ))
+    do
+        result=$((result * i))
+    done
+
+    echo $result
+}
+
+# Read the input number from the user
+read -p "Enter a number to calculate its factorial: " number
+
+# Check if the number is non-negative
+if [[ $number -lt 0 ]]; then
+    echo "Factorial is not defined for negative numbers."
+else
+    # Call the factorial function
+    echo "The factorial of $number is: $(factorial $number)"
+fi

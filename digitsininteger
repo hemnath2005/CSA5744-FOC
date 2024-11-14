@@ -1,0 +1,9 @@
+
+echo "Enter an integer:"
+read num
+num=${num#-}
+echo "Digits:"
+for (( i=0; i<${#num}; i++ )); do
+  echo "${num:$i:1}"
+done
+
